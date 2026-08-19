@@ -1,53 +1,42 @@
-import 'package:flutter/material.dart';
-import 'package:workshop_animation/core/theme/app_colors.dart';
 
+class MovieModel {
+  final String id;
+  final String title;
+  final String imageUrl;
+  final double rating;
+  final String genre;
+  final int year;
+  final String synopsis;
 
-class AppTheme {
-  AppTheme._();
+  const MovieModel({
+    required this.id,
+    required this.title,
+    required this.imageUrl,
+    required this.rating,
+    required this.genre,
+    required this.year,
+    required this.synopsis,
+  });
 
-  static ThemeData get lightTheme {
-    final base = ThemeData.light(useMaterial3: true);
-    return base.copyWith(
-      scaffoldBackgroundColor: AppColors.lightBackground,
-      primaryColor: AppColors.primaryYellow,
-      textTheme: GoogleFonts.poppinsTextTheme(base.textTheme).apply(
-        bodyColor: AppColors.lightTextPrimary,
-        displayColor: AppColors.lightTextPrimary,
-      ),
-      colorScheme: base.colorScheme.copyWith(
-        primary: AppColors.primaryYellow,
-        surface: AppColors.lightBackground,
-      ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.lightBackground,
-        elevation: 0,
-        surfaceTintColor: Colors.transparent,
-        iconTheme: IconThemeData(color: AppColors.lightTextPrimary),
-      ),
-      dividerColor: AppColors.lightBorder,
+  factory MovieModel.fromJson(Map<String, dynamic> json) {
+    return MovieModel(
+      id: json['id'] as String,
+      title: json['title'] as String,
+      imageUrl: json['imageUrl'] as String,
+      rating: (json['rating'] as num).toDouble(),
+      genre: json['genre'] as String,
+      year: json['year'] as int,
+      synopsis: json['synopsis'] as String,
     );
   }
 
-  static ThemeData get darkTheme {
-    final base = ThemeData.dark(useMaterial3: true);
-    return base.copyWith(
-      scaffoldBackgroundColor: AppColors.darkBackground,
-      primaryColor: AppColors.primaryYellow,
-      textTheme: GoogleFonts.poppinsTextTheme(base.textTheme).apply(
-        bodyColor: AppColors.darkTextPrimary,
-        displayColor: AppColors.darkTextPrimary,
-      ),
-      colorScheme: base.colorScheme.copyWith(
-        primary: AppColors.primaryYellow,
-        surface: AppColors.darkBackground,
-      ),
-      appBarTheme: const AppBarTheme(
-        backgroundColor: AppColors.darkBackground,
-        elevation: 0,
-        surfaceTintColor: Colors.transparent,
-        iconTheme: IconThemeData(color: AppColors.darkTextPrimary),
-      ),
-      dividerColor: AppColors.darkBorder,
-    );
-  }
+  Map<String, dynamic> toJson() => {
+        'id': id,
+        'title': title,
+        'imageUrl': imageUrl,
+        'rating': rating,
+        'genre': genre,
+        'year': year,
+        'synopsis': synopsis,
+      };
 }
