@@ -1,4 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
+import 'package:workshop_animation/core/widgets/movielist_card.dart';
+import 'package:workshop_animation/viewmodels/movie_vm.dart';
+import 'package:workshop_animation/views/detail.dart';
 import '../../core/theme/app_colors.dart';
 
 class WatchlistView extends StatelessWidget {

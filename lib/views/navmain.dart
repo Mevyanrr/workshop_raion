@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:workshop_animation/core/widgets/navbar.dart';
 import 'package:workshop_animation/viewmodels/navigation_vm.dart';
 import 'package:workshop_animation/views/home.dart';

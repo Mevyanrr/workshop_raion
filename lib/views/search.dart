@@ -1,4 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
+import 'package:workshop_animation/core/widgets/genre_chip.dart';
+import 'package:workshop_animation/core/widgets/movie_grid.dart';
+import 'package:workshop_animation/viewmodels/movie_vm.dart';
+import 'package:workshop_animation/viewmodels/theme_vm.dart';
+import 'package:workshop_animation/views/detail.dart';
 import '../../core/theme/app_colors.dart';
 import '../../models/genre_model.dart';
 

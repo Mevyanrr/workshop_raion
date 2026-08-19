@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
+import 'package:provider/provider.dart';
+import 'package:workshop_animation/viewmodels/movie_vm.dart';
 import '../../core/theme/app_colors.dart';
+
 
 class MovieDetailView extends StatelessWidget {
   final String movieId;

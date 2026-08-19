@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:workshop_animation/core/theme/app_colors.dart';
+import 'package:workshop_animation/models/movie_model.dart';
 
 class MovieListCard extends StatelessWidget {
   final MovieModel movie;
